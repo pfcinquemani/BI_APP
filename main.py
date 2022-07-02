@@ -23,7 +23,7 @@ if choice == "Dashboard 2":
     stc.html(page, width=800, height=500, scrolling=False)
 
 if choice == "Dashboard 1 and 2":
-    st.subheader("Dashboard 1")
+    st.subheader("Dashboard 2")
     pagina = "power_bi1.html"
     file = codecs.open(pagina, 'r')
     page = file.read()
