@@ -16,14 +16,14 @@ if choice == "Dashboard 1":
     stc.html(page, width=800, height=500, scrolling=False)
 
 if choice == "Dashboard 2":
-    st.subheader("Dashboard number 1")
+    st.subheader("Dashboard number 2")
     pagina = "power_bi2.html"
     file = codecs.open(pagina, 'r')
     page = file.read()
     stc.html(page, width=800, height=500, scrolling=False)
 
 if choice == "Dashboard 1 and 2":
-    st.subheader("Dashboard 2")
+    st.subheader("Dashboard 1")
     pagina = "power_bi1.html"
     file = codecs.open(pagina, 'r')
     page = file.read()
