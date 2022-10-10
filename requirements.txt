@@ -1,6 +1,6 @@
 
 attrs==21.4.0
-
+bokeh==2.4.3
 gitdb==4.0.9
 GitPython==3.1.27
 
