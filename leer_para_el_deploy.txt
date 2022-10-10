@@ -1,0 +1,4 @@
+primero hacer el repositorio
+segundo clonarlo a mi disco
+tercero ahí mismo creo el entorno virtual de python
+cuarto seguir los consejos de Jessi Udemy
