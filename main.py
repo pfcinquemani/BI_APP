@@ -107,7 +107,7 @@ if choice == "Python Natural Languaje Processing":
         st.write("Recall: ", Recall_NB)
         st.write("F1 Score: ", F1_Score_NB)
 
-    st.write("Regresión Logística")
+    st.write("Logistic Regresion")
     # """Ajustamos el modelo en el conjunto de entrenamiento"""
     from sklearn.linear_model import LogisticRegression
 
@@ -272,7 +272,7 @@ if choice == "Python Natural Languaje Processing":
         st.write("Recall: ", Recall_RandomForest)
         st.write("F1 Score: ", F1_Score_RandomForest)
 
-    st.write("Árboles de decisión")
+    st.write("Decision Tree")
     from sklearn.tree import DecisionTreeClassifier
 
     classifier = DecisionTreeClassifier(criterion="entropy", random_state=0)
