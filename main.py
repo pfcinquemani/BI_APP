@@ -315,7 +315,7 @@ if choice == "Python Natural Languaje Processing":
     st.write("Ranking By F1Score")
 
     st.write("This ranking is ordered descendent by F1Score. "
-             "If we assuming that F1Score is the best way to evaluate our analysis, we have to affirm that Naïve Bayes is the best classification algorithm for our dataset. ")
+             "If we assuming that F1Score is the best way to evaluate our analysis, we have to affirm that Naïve Bayes is the best classification algorithm to predict if a punctual commentary is positive or negative. ")
 
     resultados = {'Algorithm': ['Naive Bayes', 'Logistic Regresion', 'KNN', 'SVM', 'Kernel SVM', 'Random Forest',
                                 'Decision Tree'],
