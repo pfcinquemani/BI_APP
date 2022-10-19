@@ -70,10 +70,17 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random
 
 
 if choice == "Python Natural Languaje Processing":
+
+
+    st.write("This dataset refers to the commentaries of a restaurant clients. "
+             "So, here, we are going to test different algorithms in order to determinates witch one is the best to predict if a certain comment is good or bad. "
+             "This area of the machine learning is called Natural Processing Languaje and consist on taking raw text, tranform it and give an analysis like we do with numbers.")
+
     with st.expander("Complete Raw Dataset"):
         st.dataframe(dataset)
 
     st.subheader("List of Results: ")
+    st.write("Here we show the confusion matrix results and four different measures of accuracy of each algorithm.")
 
     st.write("Naive Bayes")
     # """Creamos el modelo de clasificación"""
@@ -306,6 +313,9 @@ if choice == "Python Natural Languaje Processing":
     # construcción del data frame con los resultados
 
     st.write("Ranking By F1Score")
+
+    st.write("This ranking is ordered descendent by F1Score. "
+             "If we assuming that F1Score is the best way to evaluate, we have to affirm that Naïve Bayes is the best classification algorithm for our dataset. ")
 
     resultados = {'Algorithm': ['Naive Bayes', 'Logistic Regresion', 'KNN', 'SVM', 'Kernel SVM', 'Random Forest',
                                 'Decision Tree'],
