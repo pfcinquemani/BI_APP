@@ -339,6 +339,10 @@ if choice == "Python Natural Languaje Processing":
 if choice == "Python Logistic Regresion Graphic":
     import pandas as pd
 
+    st.write("This dataset consist on social networks advertisements. "
+             "Each observation is a client, or user, and shows differents catracteristics of each one: user ID, gender, age and estimated salary, and finally the data shows if the user has buyed or not."
+             "We are going to determinate if the algorithm can predict correctly if the punctual client is going to buy or not, based on the the carasteristics given.")
+
     social_network = pd.read_csv("Social_Network_Ads.csv")
 
     X = social_network.iloc[:, [2, 3]].values
