@@ -380,7 +380,7 @@ if choice == "Python Logistic Regresion Graphic":
         st.write(cm_log_reg)
 
     Accuracy_ArbolesDecision = round((cm_log_reg[1][1] + cm_log_reg[0][0]) /
-                                     (cm_log_reg[1][1] + cm_log_reg[0][0] + cm_DecTree[0][1] + cm_log_reg[1][0]), 2)
+                                     (cm_log_reg[1][1] + cm_log_reg[0][0] + cm_log_reg[0][1] + cm_log_reg[1][0]), 2)
     Precision_ArbolesDecision = round((cm_log_reg[1][1]) / (cm_log_reg[1][1] + cm_log_reg[0][1]), 2)
     Recall_ArbolesDecision = round((cm_log_reg[1][1]) / (cm_log_reg[1][1] + cm_log_reg[1][0]), 2)
     F1_Score_ArbolesDecision = round(
