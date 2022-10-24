@@ -396,6 +396,8 @@ if choice == "Python Logistic Regresion Graphic":
     # Visualising the Train set results
     from matplotlib.colors import ListedColormap
 
+    st.subheader("Graphics")
+
     st.set_option('deprecation.showPyplotGlobalUse', False) #tuve que agregar esto para que pudiese mostrar el gráfico
 
     X_set, y_set = X_train, y_train
