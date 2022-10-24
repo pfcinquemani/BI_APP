@@ -343,6 +343,8 @@ if choice == "Python Logistic Regresion Graphic":
              "Each observation is a client, or user, and shows differents catracteristics of each one: user ID, gender, age and estimated salary, and finally the data shows if the user has buyed or not."
              "We are going to determinate if the algorithm can predict correctly if the punctual client is going to buy or not, based on the the carasteristics given.")
 
+    st.subheader("Confusion Matrix")
+
     social_network = pd.read_csv("Social_Network_Ads.csv")
 
     X = social_network.iloc[:, [2, 3]].values
@@ -369,8 +371,27 @@ if choice == "Python Logistic Regresion Graphic":
 
     from sklearn.metrics import confusion_matrix
 
-    cm = confusion_matrix(y_test, y_pred)
-    st.write(cm)
+    cm_log_reg = confusion_matrix(y_test, y_pred)
+
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.write(cm_log_reg)
+
+    Accuracy_ArbolesDecision = round((cm_log_reg[1][1] + cm_log_reg[0][0]) /
+                                     (cm_log_reg[1][1] + cm_log_reg[0][0] + cm_DecTree[0][1] + cm_log_reg[1][0]), 2)
+    Precision_ArbolesDecision = round((cm_log_reg[1][1]) / (cm_log_reg[1][1] + cm_log_reg[0][1]), 2)
+    Recall_ArbolesDecision = round((cm_log_reg[1][1]) / (cm_log_reg[1][1] + cm_log_reg[1][0]), 2)
+    F1_Score_ArbolesDecision = round(
+        (2 * Precision_ArbolesDecision * Recall_ArbolesDecision) / (Precision_ArbolesDecision + Recall_ArbolesDecision),
+        2)
+
+    with col2:
+        st.write("Accuracy: ", Accuracy_ArbolesDecision)
+        st.write("Precision: ", Precision_ArbolesDecision)
+        st.write("Recall: ", Recall_ArbolesDecision)
+        st.write("F1 Score: ", F1_Score_ArbolesDecision)
 
     # Visualising the Train set results
     from matplotlib.colors import ListedColormap
