@@ -77,6 +77,8 @@ if choice == "Python Natural Languaje Processing":
         '<div style="text-align: justify;">This dataset refers to the commentaries of a restaurant clients. So, here, we are going to test different algorithms in order to determinates witch one is the best to predict if a certain comment is good or bad. This area of the machine learning is called Natural Processing Languaje and consist on taking raw text, tranform it and give an analysis like we do with numbers.</div>',
         unsafe_allow_html=True)
 
+    st.write("")
+
 
     with st.expander("Complete Raw Dataset"):
         st.dataframe(dataset)
@@ -319,6 +321,7 @@ if choice == "Python Natural Languaje Processing":
     st.markdown(
         '<div style="text-align: justify;">This ranking is ordered descendent by F1Score. If we assuming that F1Score is the best way to evaluate our analysis, we have to affirm that Naïve Bayes is the best classification algorithm to predict if a punctual commentary is positive or negative.</div>',
         unsafe_allow_html=True)
+    st.write("")
 
     resultados = {'Algorithm': ['Naive Bayes', 'Logistic Regresion', 'KNN', 'SVM', 'Kernel SVM', 'Random Forest',
                                 'Decision Tree'],
