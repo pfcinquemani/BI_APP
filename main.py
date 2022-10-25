@@ -3,11 +3,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import streamlit as st
 import streamlit.components.v1 as stc
+from PIL import Image
 
 st.title("Please choose an option from the sidebar")
 
 menu = ["Choose an option", "Power BI Finance Analysis Dashboard", "Power BI Dashboard with Geolocalization",
-        "Python Natural Languaje Processing", "Python Logistic Regresion Graphic"]
+        "Python Natural Languaje Processing", "Python Logistic Regresion Graphic", "SQL Reports", "SQL CRUD Code"]
 
 choice = st.sidebar.selectbox("Menu", menu)
 
@@ -444,5 +445,10 @@ if choice == "Python Logistic Regresion Graphic":
     plt.legend()
     st.pyplot()
 
+if choice == "SQL Reports":
+    st.subheader("SQL Reports")
+    image = Image.open('')
 
 
+if choice == "SQL CRUD Code":
+    st.subheader("SQL CRUD Code")
