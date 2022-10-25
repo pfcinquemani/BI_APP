@@ -72,9 +72,11 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random
 if choice == "Python Natural Languaje Processing":
 
 
-    st.write("This dataset refers to the commentaries of a restaurant clients. "
-             "So, here, we are going to test different algorithms in order to determinates witch one is the best to predict if a certain comment is good or bad. "
-             "This area of the machine learning is called Natural Processing Languaje and consist on taking raw text, tranform it and give an analysis like we do with numbers.")
+
+    st.markdown(
+        '<div style="text-align: justify;">This dataset refers to the commentaries of a restaurant clients. So, here, we are going to test different algorithms in order to determinates witch one is the best to predict if a certain comment is good or bad. This area of the machine learning is called Natural Processing Languaje and consist on taking raw text, tranform it and give an analysis like we do with numbers.</div>',
+        unsafe_allow_html=True)
+
 
     with st.expander("Complete Raw Dataset"):
         st.dataframe(dataset)
@@ -314,8 +316,9 @@ if choice == "Python Natural Languaje Processing":
 
     st.write("Ranking By F1Score")
 
-    st.write("This ranking is ordered descendent by F1Score. "
-             "If we assuming that F1Score is the best way to evaluate our analysis, we have to affirm that Naïve Bayes is the best classification algorithm to predict if a punctual commentary is positive or negative. ")
+    st.markdown(
+        '<div style="text-align: justify;">This ranking is ordered descendent by F1Score. If we assuming that F1Score is the best way to evaluate our analysis, we have to affirm that Naïve Bayes is the best classification algorithm to predict if a punctual commentary is positive or negative.</div>',
+        unsafe_allow_html=True)
 
     resultados = {'Algorithm': ['Naive Bayes', 'Logistic Regresion', 'KNN', 'SVM', 'Kernel SVM', 'Random Forest',
                                 'Decision Tree'],
@@ -339,9 +342,8 @@ if choice == "Python Natural Languaje Processing":
 if choice == "Python Logistic Regresion Graphic":
     import pandas as pd
 
-    st.write("This dataset consist on social networks advertisements. "
-             "Each observation is a client, or user, and shows differents catracteristics of each one: user ID, gender, age and estimated salary, and finally the data shows if the user has buyed or not."
-             "We are going to determinate if the algorithm can predict correctly if the punctual client is going to buy or not, based on the the carasteristics given.")
+
+    st.markdown('<div style="text-align: justify;">This dataset consist on social networks advertisements. Each observation is a client, or user, and shows differents catracteristics of each one: user ID, gender, age and estimated salary, and finally the data shows if the user has buyed or not. We are going to determinate if the algorithm can predict correctly if the punctual client is going to buy or not, based on the the carasteristics given.</div>', unsafe_allow_html=True)
 
     st.subheader("Confusion Matrix")
 
