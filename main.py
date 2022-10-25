@@ -7,12 +7,12 @@ from PIL import Image
 
 st.title("Please choose an option from the sidebar")
 
-menu = ["Choose an option", "Power BI Finance Analysis Dashboard", "Power BI Dashboard with Geolocalization",
-        "Python Natural Languaje Processing", "Python Logistic Regresion Graphic", "SQL Reports", "SQL CRUD Code"]
+menu = ["Choose an option", "Power BI Finance Dashboard 📊", "Power BI Geolocated 🗺️",
+        "Python Natural Language Processing 👅", "Python Logistic Regression Graphic 🐍", "SQL Reports SSRS 🗄️", "SQL CRUD Code ✔"]
 
 choice = st.sidebar.selectbox("Menu", menu)
 
-if choice == "Power BI Finance Analysis Dashboard":
+if choice == "Power BI Finance Dashboard 📊":
     st.subheader("Finance Analysis Dashboard")
 
     pagina = "power_bi1.html"
@@ -20,7 +20,7 @@ if choice == "Power BI Finance Analysis Dashboard":
     page = file.read()
     stc.html(page, width=800, height=500, scrolling=False)
 
-if choice == "Power BI Dashboard with Geolocalization":
+if choice == "Power BI Geolocated 🗺️":
     st.subheader("Dashboard with Geolocalization")
     pagina = "power_bi2.html"
     file = codecs.open(pagina, 'r')
@@ -70,7 +70,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random
 # Para este caso eliminamos el escalado de variables ya que este dataset se encuentra entre 0 y 1
 
 
-if choice == "Python Natural Languaje Processing":
+if choice == "Python Natural Language Processing 👅":
 
 
 
@@ -343,7 +343,7 @@ if choice == "Python Natural Languaje Processing":
     st.write('F1Score Barplot')
     st.bar_chart(df['F1Score'], width=800, height=300, use_container_width=True)
 
-if choice == "Python Logistic Regresion Graphic":
+if choice == "Python Logistic Regression Graphic 🐍":
     import pandas as pd
 
 
@@ -445,7 +445,7 @@ if choice == "Python Logistic Regresion Graphic":
     plt.legend()
     st.pyplot()
 
-if choice == "SQL Reports":
+if choice == "SQL Reports SSRS 🗄️":
     st.subheader("SQL Reports")
     st.write('')
     st.markdown(
@@ -493,5 +493,61 @@ if choice == "SQL Reports":
         st.download_button(data=file, label="Download Report")
 
 
-if choice == "SQL CRUD Code":
+if choice == "SQL CRUD Code ✔":
     st.subheader("SQL CRUD Code")
+
+    st.write("")
+
+    st.markdown(
+        '<div style="text-align: justify;"> This code is a part of a ToDo APP, and shows the connection to a sqlite3 database and the "CRUD section" that allows to: Create, Read, Update and Delete tasks. </div>',
+        unsafe_allow_html=True)
+
+    st.write("")
+
+
+    code = ''' 
+    
+    import sqlite3
+conn = sqlite3.connect("data.db")
+c = conn.cursor()
+
+def create_table():
+	c.execute('CREATE TABLE IF NOT EXISTS taskstable(task_doer TEXT,task_name TEXT,task_status TEXT,task_due_date DATE)')
+
+def add_data(task_doer,task_name,task_status,task_due_date):
+	c.execute('INSERT INTO taskstable(task_doer,task_name,task_status,task_due_date) VALUES (?,?,?,?)',(task_doer,task_name,task_status,task_due_date))
+	conn.commit()
+
+def view_all_tasks():
+	c.execute('SELECT * FROM taskstable')
+	data = c.fetchall()
+	return data 
+
+def view_all_task_names():
+	c.execute('SELECT DISTINCT task_name FROM taskstable')
+	data = c.fetchall()
+	return data 
+
+def get_task_by_task_name(task_name):
+	c.execute('SELECT * FROM taskstable WHERE task_name ="{}"'.format(task_name))
+	data = c.fetchall()
+	return data
+
+def get_task_by_task_doer(task_doer):
+	c.execute('SELECT * FROM taskstable WHERE task_doer ="{}"'.format(task_doer))
+	data = c.fetchall()
+	return data
+
+def edit_task_data(new_task_doer,new_task_name,new_task_status,new_task_due_date,task_doer,task_name,task_status,task_due_date):
+	c.execute("UPDATE taskstable SET task_doer =?,task_name =?,task_status=?,task_due_date=? WHERE task_doer=? and task_name=? and task_status=? and task_due_date=?",(new_task_doer,new_task_name,new_task_status,new_task_due_date,task_doer,task_name,task_status,task_due_date))
+	conn.commit()
+	data = c.fetchall()
+	return data
+
+def delete_data(task_name):
+	c.execute('DELETE FROM taskstable WHERE task_name="{}"'.format(task_name))
+	conn.commit()
+
+    
+    '''
+    st.code(code, language='python')
