@@ -447,7 +447,50 @@ if choice == "Python Logistic Regresion Graphic":
 
 if choice == "SQL Reports":
     st.subheader("SQL Reports")
-    image = Image.open('')
+    st.write('')
+    st.markdown(
+        '<div style="text-align: justify;">In this section we are going to show the differents steps to build a Report with SQL Server Report Service (SSRS).</div>',
+        unsafe_allow_html=True)
+
+    st.write("")
+    st.write("Step 1: We need to import the Data Base and select the data the we are going to use in the report:")
+    image1 = Image.open('1.ServerManagementStudio.png')
+    st.image(image1)
+
+    st.write("")
+    st.write("Step 2: We have to create the query in the Query Designer:")
+    image2 = Image.open('2.QueryDesigner.png')
+    st.image(image2)
+
+    st.write("")
+    st.write("Step 3: We create the Report:")
+    col1, col2 = st.columns(2)
+
+    with col1:
+
+        image3 = Image.open('3.1.SSRSReport.png')
+        st.image(image3)
+
+    with col2:
+
+        image4 = Image.open('3.2.SSRSReport.png')
+        st.image(image4)
+
+    st.write("")
+
+    col3, col4 = st.columns(2)
+    with col3:
+        image5 = Image.open('3.3.SSRSReport.png')
+        st.image(image3)
+
+    with col4:
+        image6 = Image.open('3.4.SSRSReport.png')
+        st.image(image4)
+
+    st.write("")
+    st.subheader("If you want to download the report:")
+    with open('ReportWizard.csv') as file:
+        st.download_button(data=file, label="Download Report")
 
 
 if choice == "SQL CRUD Code":
