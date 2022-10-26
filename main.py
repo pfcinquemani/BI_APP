@@ -481,11 +481,11 @@ if choice == "SQL Reports SSRS 🗄️":
     col3, col4 = st.columns(2)
     with col3:
         image5 = Image.open('3.3.SSRSReport.png')
-        st.image(image3)
+        st.image(image5)
 
     with col4:
         image6 = Image.open('3.4.SSRSReport.png')
-        st.image(image4)
+        st.image(image6)
 
     st.write("")
     st.subheader("If you want to download the report:")
