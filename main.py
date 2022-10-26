@@ -119,7 +119,7 @@ if choice == "Python Natural Language Processing 👅":
         st.write("Recall: ", Recall_NB)
         st.write("F1 Score: ", F1_Score_NB)
 
-    st.write("Logistic Regresion")
+    st.write("Logistic Regression")
     # """Ajustamos el modelo en el conjunto de entrenamiento"""
     from sklearn.linear_model import LogisticRegression
 
