@@ -5,7 +5,7 @@ import streamlit as st
 import streamlit.components.v1 as stc
 from PIL import Image
 
-st.title("Please choose an option from the sidebar")
+st.title("Please choose an option from the sidebar.")
 
 menu = ["Choose an option", "Power BI Finance Dashboard 📊", "Power BI Geolocated 🗺️",
         "Python Natural Language Processing 👅", "Python Logistic Regression Graphic 🐍", "SQL Reports SSRS 🗄️", "SQL CRUD Code ✔"]
